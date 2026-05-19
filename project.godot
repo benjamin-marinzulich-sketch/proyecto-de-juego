@@ -11,7 +11,14 @@ config_version=5
 [application]
 
 config/name="Nuevo Proyecto de Juego"
+run/main_scene="uid://clju3j710aint"
 config/features=PackedStringArray("4.6", "Forward Plus")
+
+[display]
+
+window/size/viewport_width=960
+window/size/viewport_height=540
+window/stretch/mode="canvas_items"
 
 [physics]
 
