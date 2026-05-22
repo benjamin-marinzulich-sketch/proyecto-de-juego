@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://bqpbdif437ww1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rl6c"]
+bg_color = Color(0.2901961, 0.2, 0.1254902, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.827451, 0.8156863, 0.7607843, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="MenuPausa" type="CanvasLayer" unique_id=1598464302]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=60498599]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1764706, 0.12156863, 0.08627451, 0.47058824)
+
+[node name="Panel" type="Panel" parent="." unique_id=362403942]
+custom_minimum_size = Vector2(400, 500)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -250.0
+offset_right = 200.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6rl6c")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1652227500]
+layout_mode = 0
+offset_right = 402.0
+offset_bottom = 501.0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="ListaBotones" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=1854657489]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Button" type="Button" parent="Panel/MarginContainer/ListaBotones" unique_id=1957622792]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="Panel/MarginContainer/ListaBotones" unique_id=1488364835]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="Panel/MarginContainer/ListaBotones" unique_id=2051260111]
+layout_mode = 2
