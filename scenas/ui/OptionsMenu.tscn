@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c7uugvfxsprv2"]
 
-[ext_resource type="Texture2D" uid="uid://b0ff57e7ea1p4" path="res://scenas/ui/assets/width_1536.png" id="1_npfpv"]
+[ext_resource type="Texture2D" uid="uid://c0l8qancdsdnk" path="res://scenas/ui/assets/width_1536.png" id="1_npfpv"]
 [ext_resource type="Script" uid="uid://bcwu6gkr1yob1" path="res://scenas/ui/options_menu.gd" id="1_wgewc"]
-[ext_resource type="Texture2D" uid="uid://cqiegbevspj42" path="res://scenas/ui/assets/qweerr.png" id="2_fe6a4"]
+[ext_resource type="Texture2D" uid="uid://d35dt6spnw10m" path="res://scenas/ui/assets/qweerr.png" id="2_fe6a4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fe6a4"]
 bg_color = Color(0.54509807, 0.39607844, 0.2627451, 1)
