@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://jpsrfpxso55a"]
 
-[ext_resource type="Texture2D" uid="uid://dn77e67a51u5w" path="res://TILSETS/TOM/TOM FRAMES IDLE.png" id="2_ek4bc"]
-[ext_resource type="Texture2D" uid="uid://hyu66gsbjlyg" path="res://TILSETS/TOM/tom walk.png" id="3_c38ja"]
+[ext_resource type="Texture2D" uid="uid://cjmlqwt75fai" path="res://TILSETS/TOM/TOM FRAMES IDLE.png" id="2_ek4bc"]
+[ext_resource type="Texture2D" uid="uid://wdt462i8nbcn" path="res://TILSETS/TOM/tom walk.png" id="3_c38ja"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_smqx1"]
 atlas = ExtResource("2_ek4bc")
@@ -92,7 +92,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_smqx1"]
 size = Vector2(25, 48)
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=292408633]
+[node name="Tom" type="CharacterBody2D" unique_id=292408633]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1785893482]
 scale = Vector2(0.9895832, 1.0117188)
