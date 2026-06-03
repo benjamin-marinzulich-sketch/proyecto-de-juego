@@ -187,9 +187,10 @@ z_index = 1
 script = ExtResource("1_hw7yc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1785893482]
+z_index = 1
 position = Vector2(0.5, 9.536743e-07)
 sprite_frames = SubResource("SpriteFrames_gxcih")
-animation = &"walk"
+animation = &"atack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1530399402]
 position = Vector2(2.5, 0)

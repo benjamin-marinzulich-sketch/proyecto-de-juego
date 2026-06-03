@@ -26,8 +26,8 @@ func _physics_process(delta):
 		velocity.y *= 0.5
 
 # 3. Activar Ataque
-	# CAMBIO: Usamos "is_action_just_pressed" para que solo detecte el primer clic
 	if Input.is_action_just_pressed("attack") and not is_attacking:
+		print("¡Botón presionado correctamente!") # <--- AGREGA ESTO
 		is_attacking = true
 		_animated_sprite.play("atack")
 		_hitbox_collision.set_deferred("disabled", false)
