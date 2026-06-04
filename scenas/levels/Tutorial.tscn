@@ -357,4 +357,4 @@ scale = Vector2(0.8333334, 0.7901234)
 texture = ExtResource("8_wqiiw")
 
 [node name="TOM" parent="." unique_id=292408633 instance=ExtResource("2_twd8f")]
-position = Vector2(167, 207)
+position = Vector2(350, 156)
