@@ -4,7 +4,7 @@ const SPEED = 120.0
 const JUMP_VELOCITY = -400.0
 
 @onready var _animated_sprite = $AnimatedSprite2D
-@onready var _hitbox = $Area2D # Asegúrate de usar $Area2D o $Hitbox según tu escena
+@onready var _hitbox = $Area2D 
 @onready var _hitbox_collision = $Area2D/CollisionShape2D 
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
