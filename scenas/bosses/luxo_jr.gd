@@ -13,6 +13,7 @@ var vida = 5
 var is_dead = false
 
 @onready var _animated_sprite = $AnimatedSprite2D
+@onready var _hitbox_danio_collision = $HitboxEnemigo/CollisionShape2D
 
 func _physics_process(delta: float) -> void:
 	# 🪦 BLOQUEO TOTAL POR MUERTE: Si el enemigo murió, se apaga su lógica
@@ -26,12 +27,24 @@ func _physics_process(delta: float) -> void:
 	# 1. Gravedad
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
+		
+		# 📈 EN EL AIRE: Se estira hacia arriba y se hace más delgado (Tipo Slime)
+		# Ajusta el Vector2(ancho, alto) a los píxeles que le queden bien a tu sprite
+		_hitbox_danio_collision.shape.size = Vector2(64.0, 128.0)
+	
 	# 2. Detector de impacto (Aterrizaje)
 	if is_on_floor():
 		if not was_on_floor:
 			_trigger_landing_stomp()
 		was_on_floor = true
+		
+		# 📉 EN EL SUELO: Si está caminando normal o pausado, recupera su ancho base o se aplasta
+		if is_landing_paused:
+			# Mientras hace el pisotón (impacto contra el suelo), se vuelve MUY ancho y petaco
+			_hitbox_danio_collision.shape.size = Vector2(104.0, 128.0)
+		else:
+			# Cuando camina normal, vuelve a su tamaño estándar de rectángulo
+			_hitbox_danio_collision.shape.size = Vector2(104.0, 128.0)
 	else:
 		was_on_floor = false
 
@@ -84,17 +97,39 @@ func _on_hitbox_enemigo_body_entered(body: Node2D) -> void:
 		body.recibir_danio(1, global_position.x)
 
 
-# --- NUEVA FUNCIÓN: RECIBIR DAÑO (Para que Tom pueda golpear al enemigo) ---
-# Cuando crees el golpe de Tom, su hitbox debe llamar a esta función en el enemigo
+# --- FUNCIÓN: RECIBIR DAÑO (Modificada con efecto de brillo/tintineo) ---
 func recibir_danio(cantidad_danio: int) -> void:
 	if is_dead:
 		return
 		
 	vida -= cantidad_danio
-	print("¡Enemigo golpeado! Vida restante: ", vida)
+	print("¡Boss golpeado! Vida restante: ", vida)
+	
+	# 🔥 NUEVO: Activamos el tintineo visual de impacto
+	_efecto_brillo_golpe()
 	
 	if vida <= 0:
 		_morir()
+
+
+# --- NUEVA RUTINA: EFECTO DE TINTINEO VISUAL ---
+func _efecto_brillo_golpe() -> void:
+	# Hacemos que el boss parpadee volviéndose semi-transparente y rojo por un instante
+	# Puedes cambiar el Color(2, 0.5, 0.5) para ajustar el tono del brillo
+	
+	# Primer parpadeo rápido
+	_animated_sprite.modulate = Color(3.0, 0.3, 0.3, 1.0) # Se vuelve rojo brillante (HDR)
+	await get_tree().create_timer(0.05).timeout
+	
+	_animated_sprite.modulate = Color(1.0, 1.0, 1.0, 0.2) # Se vuelve casi invisible
+	await get_tree().create_timer(0.05).timeout
+	
+	# Segundo parpadeo rápido
+	_animated_sprite.modulate = Color(3.0, 0.3, 0.3, 1.0)
+	await get_tree().create_timer(0.05).timeout
+	
+	# Devolvemos al boss a su color e intensidad original obligatoriamente
+	_animated_sprite.modulate = Color(1.0, 1.0, 1.0, 1.0)
 
 
 # --- NUEVA FUNCIÓN: MUERTE DEL ENEMIGO ---

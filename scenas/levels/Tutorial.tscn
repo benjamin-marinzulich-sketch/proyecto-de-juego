@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://c20wxuri5f53p" path="res://TUTORIAL SETS/2 Background/Day/4.png" id="6_jgy53"]
 [ext_resource type="Texture2D" uid="uid://bkc48obdyfwgp" path="res://TUTORIAL SETS/2 Background/Night/3.png" id="7_wqiiw"]
 [ext_resource type="Texture2D" uid="uid://cy22edn3817i" path="res://TUTORIAL SETS/2 Background/Night/5.png" id="8_wqiiw"]
+[ext_resource type="PackedScene" uid="uid://o2i53gjwa6ca" path="res://scenas/bosses/luxo jr.tscn" id="8_yyfoi"]
+[ext_resource type="PackedScene" uid="uid://c2cyum6cfduut" path="res://scenas/TOM/character_body_2d.tscn" id="9_o62x8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2jusp"]
 resource_name = "tertert"
@@ -354,3 +356,9 @@ texture = ExtResource("7_wqiiw")
 position = Vector2(240, 127.99999)
 scale = Vector2(0.8333334, 0.7901234)
 texture = ExtResource("8_wqiiw")
+
+[node name="LuxoJr" parent="." unique_id=545867369 instance=ExtResource("8_yyfoi")]
+position = Vector2(61, 185)
+
+[node name="CharacterBody2D" parent="." unique_id=292408633 instance=ExtResource("9_o62x8")]
+position = Vector2(456, 232)

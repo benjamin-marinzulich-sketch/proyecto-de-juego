@@ -83,19 +83,22 @@ func _physics_process(delta):
 		var facing_direction = -1.0 if _animated_sprite.flip_h else 1.0
 		velocity.x = facing_direction * DASH_SPEED
 
-	# 4. Movimiento Horizontal
+# 4. Movimiento Horizontal
 	if not is_dashing: 
 		var direction = Input.get_axis("ui_left", "ui_right")
 		if direction:
 			velocity.x = direction * SPEED
 			_animated_sprite.flip_h = direction < 0
 			
-			# MEJORA RADICAL DEL BATE: En vez de escalar, movemos la posición X
-			# Ajusta el 35.0 si necesitas que el bate llegue todavía más lejos
+			# 📐 CALIBRACIÓN SIMÉTRICA DEL BATE
 			if direction < 0:
-				_hitbox.position.x = -35.0  
+				# A la izquierda le damos más empuje negativo para compensar
+				# Si todavía se queda corto, cambia el -50.0 por -55.0 o -60.0
+				_hitbox.position.x = -50.0  
 			else:
-				_hitbox.position.x = 35.0  
+				# A la derecha lo encogemos un poco para que no golpee tan lejos
+				# Si sigue estando muy lejos, baja el 20.0 a 15.0 o 10.0
+				_hitbox.position.x = 10.0  
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 	else:
