@@ -118,9 +118,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ksj2o"]
-radius = 52.0
-height = 128.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ksj2o"]
+size = Vector2(104, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6n1vk"]
 size = Vector2(104, 136)
@@ -131,11 +130,11 @@ script = ExtResource("1_c18oc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1180849626]
 sprite_frames = SubResource("SpriteFrames_dv83r")
-animation = &"hop_land"
+animation = &"hop_air"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2039901856]
 position = Vector2(-4, 0)
-shape = SubResource("CapsuleShape2D_ksj2o")
+shape = SubResource("RectangleShape2D_ksj2o")
 
 [node name="HitboxEnemigo" type="Area2D" parent="." unique_id=433087985]
 collision_layer = 5
