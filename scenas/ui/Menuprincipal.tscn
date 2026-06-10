@@ -1,8 +1,18 @@
 [gd_scene format=3 uid="uid://clju3j710aint"]
 
 [ext_resource type="Texture2D" uid="uid://b0ff57e7ea1p4" path="res://scenas/ui/assets/width_1536.png" id="1_8ya7n"]
+[ext_resource type="Script" uid="uid://c4e54eemcgrv" path="res://scenas/ui/menuprincipal.gd" id="1_y0qcn"]
 [ext_resource type="Texture2D" uid="uid://cqiegbevspj42" path="res://scenas/ui/assets/qweerr.png" id="2_cvsen"]
-[ext_resource type="Texture2D" uid="uid://dd2msjbgsqqko" path="res://scripts/global/saedfasdfas.png" id="3_qrof7"]
+[ext_resource type="Texture2D" uid="uid://djiggii8y1gwl" path="res://scripts/global/logojuego (1) (3).png" id="3_qrof7"]
+[ext_resource type="Texture2D" uid="uid://divb7nla6ebxb" path="res://scripts/global/freebuttons2.png" id="5_7y3y5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5v0b1"]
+atlas = ExtResource("5_7y3y5")
+region = Rect2(0.011444092, -0.06073475, 16.345613, 16.041039)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cv1jf"]
+atlas = ExtResource("5_7y3y5")
+region = Rect2(15.671257, 0.2579174, 16.757439, 16.51805)
 
 [node name="Menuprincipal" type="Control" unique_id=1111056977]
 layout_mode = 3
@@ -11,6 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_y0qcn")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1717678551]
 layout_mode = 1
@@ -23,18 +34,28 @@ texture = ExtResource("1_8ya7n")
 
 [node name="TvFrame" type="NinePatchRect" parent="." unique_id=1869992140]
 layout_mode = 0
-offset_left = -26.0
-offset_top = -14.0
-offset_right = 990.0
-offset_bottom = 557.0
+offset_left = -14.0
+offset_top = -11.0
+offset_right = 494.0
+offset_bottom = 279.0
 texture = ExtResource("2_cvsen")
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=965955583]
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=830878650]
 layout_mode = 0
-offset_left = 32.0
-offset_top = -54.0
-offset_right = 1046.0
-offset_bottom = 339.0
-texture_normal = ExtResource("3_qrof7")
+offset_left = 171.0
+offset_top = 34.0
+offset_right = 309.0
+offset_bottom = 154.0
+texture = ExtResource("3_qrof7")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=776239613]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 162.0
+offset_right = 239.0
+offset_bottom = 177.0
+texture_normal = SubResource("AtlasTexture_5v0b1")
+texture_pressed = SubResource("AtlasTexture_cv1jf")
 ignore_texture_size = true
-stretch_mode = 3
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
