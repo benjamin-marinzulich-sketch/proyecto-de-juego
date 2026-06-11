@@ -9,7 +9,7 @@ var was_on_floor = true
 var direction = 1 
 
 # --- NUEVAS VARIABLES DE SALUD DEL ENEMIGO ---
-var vida = 5
+var vida = 10
 var is_dead = false
 
 @onready var _animated_sprite = $AnimatedSprite2D

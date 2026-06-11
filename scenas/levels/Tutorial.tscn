@@ -1,12 +1,13 @@
 [gd_scene format=4 uid="uid://crep3g7wyv31s"]
 
+[ext_resource type="Script" uid="uid://caa8p61rxssh8" path="res://scenas/levels/tutorial.gd" id="1_o62x8"]
 [ext_resource type="Texture2D" uid="uid://2nuai2yjfh0p" path="res://TUTORIAL SETS/2 Background/Night/untitled.png" id="1_wqiiw"]
-[ext_resource type="Texture2D" uid="uid://juugg7wo7jtx" path="res://TUTORIAL SETS/2 Background/Day/1.png" id="3_f1cyp"]
-[ext_resource type="Texture2D" uid="uid://d0fyhy8gbaksh" path="res://TUTORIAL SETS/2 Background/Day/2.png" id="4_agmeb"]
-[ext_resource type="Texture2D" uid="uid://lrhfuijyq11l" path="res://TUTORIAL SETS/2 Background/Day/3.png" id="5_abbcw"]
-[ext_resource type="Texture2D" uid="uid://dnb3owylhgso7" path="res://TUTORIAL SETS/2 Background/Day/4.png" id="6_jgy53"]
-[ext_resource type="Texture2D" uid="uid://8qx8dirsteh6" path="res://TUTORIAL SETS/2 Background/Night/3.png" id="7_wqiiw"]
-[ext_resource type="Texture2D" uid="uid://15nw1bd8xpkd" path="res://TUTORIAL SETS/2 Background/Night/5.png" id="8_wqiiw"]
+[ext_resource type="Texture2D" uid="uid://bx8tacadub6c8" path="res://TUTORIAL SETS/2 Background/Day/1.png" id="3_f1cyp"]
+[ext_resource type="Texture2D" uid="uid://cfl005bv63xrl" path="res://TUTORIAL SETS/2 Background/Day/2.png" id="4_agmeb"]
+[ext_resource type="Texture2D" uid="uid://bghtq7ba0vrk7" path="res://TUTORIAL SETS/2 Background/Day/3.png" id="5_abbcw"]
+[ext_resource type="Texture2D" uid="uid://c20wxuri5f53p" path="res://TUTORIAL SETS/2 Background/Day/4.png" id="6_jgy53"]
+[ext_resource type="Texture2D" uid="uid://bkc48obdyfwgp" path="res://TUTORIAL SETS/2 Background/Night/3.png" id="7_wqiiw"]
+[ext_resource type="Texture2D" uid="uid://cy22edn3817i" path="res://TUTORIAL SETS/2 Background/Night/5.png" id="8_wqiiw"]
 [ext_resource type="PackedScene" uid="uid://o2i53gjwa6ca" path="res://scenas/bosses/luxo jr.tscn" id="8_yyfoi"]
 [ext_resource type="PackedScene" uid="uid://c2cyum6cfduut" path="res://scenas/TOM/character_body_2d.tscn" id="9_o62x8"]
 
@@ -307,6 +308,7 @@ sources/0 = SubResource("TileSetAtlasSource_2jusp")
 
 [node name="Node2D" type="Node2D" unique_id=1479052359]
 position = Vector2(-1, 0)
+script = ExtResource("1_o62x8")
 
 [node name="Tutorial" type="TileMapLayer" parent="." unique_id=852306875]
 tile_map_data = PackedByteArray("AAAAABAAAAAAAAAAAAABABAAAAAAAAAAAAACABAAAAAAAAAAAAADABAAAAAAAAAAAAAEABAAAAAAAAAAAAAFABAAAAAAAAAAAAAGABAAAAAAAAAAAAAHABAAAAAAAAAAAAAIABAAAAAAAAAAAAAJABAAAAAAAAAAAAAKABAAAAAAAAAAAAALABAAAAAAAAAAAAAMABAAAAAAAAAAAAANABAAAAAAAAAAAAAOABAAAAAAAAAAAAAPABAAAAAAAAAAAAAQABAAAAAAAAAAAAARABAAAAAAAAAAAAASABAAAAAAAAAAAAATABAAAAAAAAAAAAAUABAAAAAAAAAAAAAVABAAAAAAAAAAAAAWABAAAAAAAAAAAAAXABAAAAAAAAAAAAAYABAAAAAAAAAAAAAZABAAAAAAAAAAAAAaABAAAAAAAAAAAAAbABAAAAAAAAAAAAAcABAAAAAAAAAAAAAdABAAAAAAAAAAAAD//xAAAAAAAAAAAAD//w8AAAAAAAAAAAD//w4AAAAAAAAAAAD//w0AAAAAAAAAAAD//wwAAAAAAAAAAAD//wsAAAAAAAAAAAD//woAAAAAAAAAAAD//wkAAAAAAAAAAAD//wgAAAAAAAAAAAD//wcAAAAAAAAAAAD//wYAAAAAAAAAAAD//wUAAAAAAAAAAAD//wQAAAAAAAAAAAD//wMAAAAAAAAAAAD//wIAAAAAAAAAAAD//wEAAAAAAAAAAAD//wAAAAAAAAAAAAAeAAAAAAAAAAAAAAAeAAEAAAAAAAAAAAAeAAIAAAAAAAAAAAAeAAMAAAAAAAAAAAAeAAQAAAAAAAAAAAAeAAUAAAAAAAAAAAAeAAYAAAAAAAAAAAAeAAcAAAAAAAAAAAAeAAgAAAAAAAAAAAAeAAkAAAAAAAAAAAAeAAoAAAAAAAAAAAAeAAsAAAAAAAAAAAAeAAwAAAAAAAAAAAAeAA0AAAAAAAAAAAAeAA4AAAAAAAAAAAAeAA8AAAAAAAAAAAAeABAAAAAAAAAAAAAeAP//AAAAAAAAAAAdAP//AAAAAAAAAAAcAP//AAAAAAAAAAAbAP//AAAAAAAAAAAaAP//AAAAAAAAAAAZAP//AAAAAAAAAAAYAP//AAAAAAAAAAAXAP//AAAAAAAAAAAWAP//AAAAAAAAAAAVAP//AAAAAAAAAAAUAP//AAAAAAAAAAATAP//AAAAAAAAAAASAP//AAAAAAAAAAARAP//AAAAAAAAAAAQAP//AAAAAAAAAAAPAP//AAAAAAAAAAAOAP//AAAAAAAAAAAOAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAANAP//AAAAAAAAAAAMAP//AAAAAAAAAAALAP//AAAAAAAAAAAKAP//AAAAAAAAAAAJAP//AAAAAAAAAAAIAP//AAAAAAAAAAAHAP//AAAAAAAAAAAGAP//AAAAAAAAAAAFAP//AAAAAAAAAAAEAP//AAAAAAAAAAADAP//AAAAAAAAAAACAP//AAAAAAAAAAABAP//AAAAAAAAAAAAAP//AAAAAAAAAAD/////AAAAAAAAAAA=")
@@ -358,8 +360,26 @@ position = Vector2(239.00002, 127.99999)
 scale = Vector2(0.8333334, 0.7901234)
 texture = ExtResource("8_wqiiw")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=12549944]
+
+[node name="LabelConteo" type="Label" parent="CanvasLayer" unique_id=1564532972]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -44.0
+offset_right = 20.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "3"
+horizontal_alignment = 1
+
 [node name="LuxoJr" parent="." unique_id=545867369 instance=ExtResource("8_yyfoi")]
-position = Vector2(61, 185)
+position = Vector2(57, 191)
 
 [node name="CharacterBody2D" parent="." unique_id=292408633 instance=ExtResource("9_o62x8")]
-position = Vector2(456, 232)
+position = Vector2(460, 232)

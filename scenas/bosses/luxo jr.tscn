@@ -130,7 +130,7 @@ script = ExtResource("1_c18oc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1180849626]
 sprite_frames = SubResource("SpriteFrames_dv83r")
-animation = &"hop_air"
+animation = &"hop_up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2039901856]
 position = Vector2(-4, 0)
