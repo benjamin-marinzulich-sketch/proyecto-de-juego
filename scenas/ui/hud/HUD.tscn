@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ha4a1s5rptl3"]
+
+[ext_resource type="Script" uid="uid://bafrh26kkv20c" path="res://scenas/ui/hud/HUD.gd" id="1_3fkls"]
+[ext_resource type="Texture2D" uid="uid://c7x8uuansltmj" path="res://scripts/global/heart_16x16.png" id="2_w4yta"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1710139365]
+script = ExtResource("1_3fkls")
+
+[node name="ContenedorCorazones" type="HBoxContainer" parent="." unique_id=1895137453]
+custom_minimum_size = Vector2(100, 32)
+anchors_preset = -1
+offset_left = 22.0
+offset_top = 22.0
+offset_right = 231.0
+offset_bottom = 54.0
+
+[node name="TextureRect" type="TextureRect" parent="ContenedorCorazones" unique_id=2099647035]
+layout_mode = 2
+texture = ExtResource("2_w4yta")
