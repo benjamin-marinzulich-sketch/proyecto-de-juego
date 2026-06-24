@@ -1,0 +1,209 @@
+[gd_scene load_steps=30 format=3]
+
+[ext_resource type="Script" path="res://scenas/bosses/simple_rat_boss.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/bosses/rat/rat-idle.png" id="2_idle"]
+[ext_resource type="Texture2D" path="res://assets/bosses/rat/rat-run.png" id="3_run"]
+[ext_resource type="Texture2D" path="res://assets/bosses/rat/rat-attack.png" id="4_attack"]
+[ext_resource type="Texture2D" path="res://assets/bosses/rat/rat-death.png" id="5_death"]
+
+[sub_resource type="AtlasTexture" id="Idle0"]
+atlas = ExtResource("2_idle")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="Idle1"]
+atlas = ExtResource("2_idle")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="Idle2"]
+atlas = ExtResource("2_idle")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="Run0"]
+atlas = ExtResource("3_run")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="Run1"]
+atlas = ExtResource("3_run")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="Run2"]
+atlas = ExtResource("3_run")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="Run3"]
+atlas = ExtResource("3_run")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="Run4"]
+atlas = ExtResource("3_run")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="Run5"]
+atlas = ExtResource("3_run")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="Attack0"]
+atlas = ExtResource("4_attack")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="Attack1"]
+atlas = ExtResource("4_attack")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="Attack2"]
+atlas = ExtResource("4_attack")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="Attack3"]
+atlas = ExtResource("4_attack")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="Attack4"]
+atlas = ExtResource("4_attack")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="Attack5"]
+atlas = ExtResource("4_attack")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="Death0"]
+atlas = ExtResource("5_death")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="Death1"]
+atlas = ExtResource("5_death")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="Death2"]
+atlas = ExtResource("5_death")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="Death3"]
+atlas = ExtResource("5_death")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="Death4"]
+atlas = ExtResource("5_death")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="Death5"]
+atlas = ExtResource("5_death")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rat"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Attack0")
+}, {
+"duration": 1.0,
+"texture": SubResource("Attack1")
+}, {
+"duration": 1.0,
+"texture": SubResource("Attack2")
+}, {
+"duration": 1.0,
+"texture": SubResource("Attack3")
+}, {
+"duration": 1.0,
+"texture": SubResource("Attack4")
+}, {
+"duration": 1.0,
+"texture": SubResource("Attack5")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Death0")
+}, {
+"duration": 1.0,
+"texture": SubResource("Death1")
+}, {
+"duration": 1.0,
+"texture": SubResource("Death2")
+}, {
+"duration": 1.0,
+"texture": SubResource("Death3")
+}, {
+"duration": 1.0,
+"texture": SubResource("Death4")
+}, {
+"duration": 1.0,
+"texture": SubResource("Death5")
+}],
+"loop": false,
+"name": &"death",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Idle0")
+}, {
+"duration": 1.0,
+"texture": SubResource("Idle1")
+}, {
+"duration": 1.0,
+"texture": SubResource("Idle2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Run0")
+}, {
+"duration": 1.0,
+"texture": SubResource("Run1")
+}, {
+"duration": 1.0,
+"texture": SubResource("Run2")
+}, {
+"duration": 1.0,
+"texture": SubResource("Run3")
+}, {
+"duration": 1.0,
+"texture": SubResource("Run4")
+}, {
+"duration": 1.0,
+"texture": SubResource("Run5")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="BodyShape"]
+size = Vector2(62, 44)
+
+[sub_resource type="RectangleShape2D" id="HitboxShape"]
+size = Vector2(76, 50)
+
+[node name="RatBoss2" type="CharacterBody2D"]
+collision_layer = 4
+script = ExtResource("1_script")
+boss_display_name = "Rata Callejera"
+max_vida = 8
+speed = 72.0
+result_detail = "Rata Callejera fue derrotada. El tercer jefe de prueba queda desbloqueado."
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -34)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_rat")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -22)
+shape = SubResource("BodyShape")
+
+[node name="HitboxEnemigo" type="Area2D" parent="."]
+collision_layer = 5
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxEnemigo"]
+position = Vector2(0, -24)
+shape = SubResource("HitboxShape")
