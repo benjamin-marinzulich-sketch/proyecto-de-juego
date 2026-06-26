@@ -1,29 +1,22 @@
 extends CanvasLayer
 
-func _ready():
-	# Asegurarnos de que el menú empiece oculto al iniciar el juego
+func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	hide()
 
-func _input(event):
-	# Detectamos si se presiona la tecla que configuramos
+func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pausa"):
 		alternar_pausa()
 
-func alternar_pausa():
-	# Invertimos el estado de pausa actual (si está pausado lo despausa, y viceversa)
+func alternar_pausa() -> void:
 	get_tree().paused = not get_tree().paused
-	
-	# Mostramos u ocultamos el menú visualmente
+	visible = get_tree().paused
+
+func _on_boton_continuar_pressed() -> void:
 	if get_tree().paused:
-		show()
-	else:
-		hide()
+		alternar_pausa()
 
-# --- Conexión de Señales ---
-
-func _on_boton_continuar_pressed():
-	alternar_pausa()
-
-func _on_boton_salir_pressed():
-	# Cierra el juego por completo
-	get_tree().quit()
+func _on_boton_salir_pressed() -> void:
+	get_tree().paused = false
+	hide()
+	get_tree().change_scene_to_file("res://scenas/ui/selector/SelectorNiveles.tscn")

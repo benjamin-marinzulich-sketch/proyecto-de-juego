@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://scenas/bosses/rat_boss_2.tscn" id="1_base"]
+
+[node name="RatBoss3" instance=ExtResource("1_base")]
+boss_display_name = "Rata Alfa"
+max_vida = 12
+speed = 92.0
+damage = 1
+result_detail = "Rata Alfa fue derrotada. Todos los jefes de prueba estan completados."
