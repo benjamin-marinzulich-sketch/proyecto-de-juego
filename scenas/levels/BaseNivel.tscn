@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://ck0u1nhqiflxp"]
 
 [ext_resource type="PackedScene" uid="uid://c2cyum6cfduut" path="res://scenas/TOM/character_body_2d.tscn" id="1_6ejd0"]
-[ext_resource type="Texture2D" uid="uid://2nuai2yjfh0p" path="res://TUTORIAL SETS/2 Background/Night/untitled.png" id="1_wo6rx"]
+[ext_resource type="Texture2D" uid="uid://2nuai2yjfh0p" path="res://TILSETS/TUTORIAL SETS/2 Background/Night/untitled.png" id="1_wo6rx"]
 [ext_resource type="PackedScene" uid="uid://ha4a1s5rptl3" path="res://scenas/ui/hud/HUD.tscn" id="2_15fsc"]
 [ext_resource type="PackedScene" uid="uid://bqpbdif437ww1" path="res://scenas/ui/menu_pausa/MenuPausa.tscn" id="3_gpag2"]
 
