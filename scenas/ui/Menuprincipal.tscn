@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://clju3j710aint"]
 
 [ext_resource type="Script" uid="uid://c4e54eemcgrv" path="res://scenas/ui/menuprincipal.gd" id="1_gvrh4"]
-[ext_resource type="Texture2D" uid="uid://c0l8qancdsdnk" path="res://scenas/ui/assets/width_1536.png" id="2_6wq4n"]
-[ext_resource type="Texture2D" uid="uid://d35dt6spnw10m" path="res://scenas/ui/assets/qweerr.png" id="3_v73jj"]
+[ext_resource type="Texture2D" uid="uid://b0ff57e7ea1p4" path="res://scenas/ui/assets/width_1536.png" id="2_6wq4n"]
+[ext_resource type="Texture2D" uid="uid://cqiegbevspj42" path="res://scenas/ui/assets/qweerr.png" id="3_v73jj"]
 [ext_resource type="Texture2D" uid="uid://c56inql7wjpur" path="res://scripts/global/logolostinsignal (1).png" id="4_t2v7k"]
-[ext_resource type="Texture2D" uid="uid://b8t0i2p1riawt" path="res://scripts/global/freebuttons2.png" id="5_rjhtc"]
+[ext_resource type="Texture2D" uid="uid://divb7nla6ebxb" path="res://scripts/global/freebuttons2.png" id="5_rjhtc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5v0b1"]
 atlas = ExtResource("5_rjhtc")
