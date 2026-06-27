@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://crep3g7wyv31s"]
 
-[ext_resource type="Script" uid="uid://caa8p61rxssh8" path="res://scenas/levels/tutorial.gd" id="1_o62x8"]
+[ext_resource type="Script" uid="uid://caa8p61rxssh8" path="res://scenas/levels/Tutorial/tutorial.gd" id="1_o62x8"]
 [ext_resource type="Texture2D" uid="uid://2nuai2yjfh0p" path="res://TILSETS/TUTORIAL SETS/2 Background/Night/untitled.png" id="1_wqiiw"]
 [ext_resource type="Texture2D" uid="uid://bx8tacadub6c8" path="res://TILSETS/TUTORIAL SETS/2 Background/Day/1.png" id="3_f1cyp"]
 [ext_resource type="Texture2D" uid="uid://cfl005bv63xrl" path="res://TILSETS/TUTORIAL SETS/2 Background/Day/2.png" id="4_agmeb"]
@@ -8,8 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://c20wxuri5f53p" path="res://TILSETS/TUTORIAL SETS/2 Background/Day/4.png" id="6_jgy53"]
 [ext_resource type="Texture2D" uid="uid://bkc48obdyfwgp" path="res://TILSETS/TUTORIAL SETS/2 Background/Night/3.png" id="7_wqiiw"]
 [ext_resource type="Texture2D" uid="uid://cy22edn3817i" path="res://TILSETS/TUTORIAL SETS/2 Background/Night/5.png" id="8_wqiiw"]
-[ext_resource type="PackedScene" uid="uid://o2i53gjwa6ca" path="res://scenas/bosses/luxo jr.tscn" id="8_yyfoi"]
-[ext_resource type="PackedScene" uid="uid://c2cyum6cfduut" path="res://scenas/TOM/character_body_2d.tscn" id="9_o62x8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2jusp"]
 resource_name = "tertert"
@@ -377,9 +375,3 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 64
 text = "3"
 horizontal_alignment = 1
-
-[node name="LuxoJr" parent="." unique_id=545867369 instance=ExtResource("8_yyfoi")]
-position = Vector2(57, 191)
-
-[node name="CharacterBody2D" parent="." unique_id=292408633 instance=ExtResource("9_o62x8")]
-position = Vector2(460, 232)

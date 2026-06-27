@@ -1,8 +1,6 @@
 [gd_scene format=3 uid="uid://clju3j710aint"]
 
-[ext_resource type="Script" uid="uid://c4e54eemcgrv" path="res://scenas/ui/menuprincipal.gd" id="1_gvrh4"]
-[ext_resource type="Texture2D" uid="uid://b0ff57e7ea1p4" path="res://scenas/ui/assets/width_1536.png" id="2_6wq4n"]
-[ext_resource type="Texture2D" uid="uid://cqiegbevspj42" path="res://scenas/ui/assets/qweerr.png" id="3_v73jj"]
+[ext_resource type="Script" uid="uid://c4e54eemcgrv" path="res://scenas/ui/menu principal/menuprincipal.gd" id="1_gvrh4"]
 [ext_resource type="Texture2D" uid="uid://c56inql7wjpur" path="res://scripts/global/logolostinsignal (1).png" id="4_t2v7k"]
 [ext_resource type="Texture2D" uid="uid://divb7nla6ebxb" path="res://scripts/global/freebuttons2.png" id="5_rjhtc"]
 
@@ -30,7 +28,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_6wq4n")
 
 [node name="TvFrame" type="NinePatchRect" parent="." unique_id=1869992140]
 layout_mode = 0
@@ -38,7 +35,6 @@ offset_left = -14.0
 offset_top = -11.0
 offset_right = 494.0
 offset_bottom = 279.0
-texture = ExtResource("3_v73jj")
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=830878650]
 layout_mode = 0
