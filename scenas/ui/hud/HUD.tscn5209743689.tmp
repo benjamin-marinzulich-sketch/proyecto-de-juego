@@ -6,10 +6,8 @@
 [node name="HUD" type="CanvasLayer" unique_id=1710139365]
 
 [node name="HealthBar" type="HBoxContainer" parent="." unique_id=1094340445]
-offset_left = 16.0
-offset_top = 9.0
-offset_right = 120.0
-offset_bottom = 49.0
+offset_right = 40.0
+offset_bottom = 40.0
 script = ExtResource("2_dqtnj")
 
 [node name="Heart1" type="TextureRect" parent="HealthBar" unique_id=479640986]

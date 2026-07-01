@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal vida_cambiada(nueva_vida) 
+
 const SPEED = 120.0
 const JUMP_VELOCITY = -400.0
 var can_dash = true # Nos dice si Tom tiene permitido dashear
@@ -149,7 +151,7 @@ func recibir_danio(cantidad_danio: int, enemigo_pos_x: float) -> void:
 	
 	vida -= cantidad_danio
 	print("¡Tom fue golpeado! Vida restante: ", vida)
-	
+	vida_cambiada.emit(vida)
 	if vida <= 0:
 		_morir()
 		return 

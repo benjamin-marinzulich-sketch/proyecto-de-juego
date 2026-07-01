@@ -1,6 +1,32 @@
 [gd_scene format=3 uid="uid://bqpbdif437ww1"]
 
 [ext_resource type="Script" uid="uid://bljuoidnl4xft" path="res://scenas/ui/menu_pausa/menu_pausa.gd" id="1_fdlhb"]
+[ext_resource type="Texture2D" uid="uid://dqyxtiou4ue0s" path="res://scenas/ui/assets/Botones/freebuttons4 (1).png" id="2_wmabt"]
+[ext_resource type="Texture2D" uid="uid://l5exr8772pr4" path="res://scenas/ui/assets/Botones/freebuttons3.png" id="3_dchyr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_um7x5"]
+atlas = ExtResource("2_wmabt")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmabt"]
+atlas = ExtResource("2_wmabt")
+region = Rect2(0, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68rhi"]
+atlas = ExtResource("2_wmabt")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_siaa2"]
+atlas = ExtResource("2_wmabt")
+region = Rect2(64, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpimu"]
+atlas = ExtResource("3_dchyr")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dchyr"]
+atlas = ExtResource("3_dchyr")
+region = Rect2(64, 32, 64, 32)
 
 [node name="MenuPausa" type="CanvasLayer" unique_id=2003240280]
 process_mode = 3
@@ -21,22 +47,34 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -32.0
+offset_top = -52.0
+offset_right = 32.0
+offset_bottom = 52.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 0
 size_flags_vertical = 4
+alignment = 1
 
-[node name="BotonContinuar" type="Button" parent="VBoxContainer" unique_id=1889020581]
+[node name="BotonContinuar" type="TextureButton" parent="VBoxContainer" unique_id=2093904933]
 layout_mode = 2
-text = "Continuar"
+focus_mode = 0
+texture_normal = SubResource("AtlasTexture_um7x5")
+texture_pressed = SubResource("AtlasTexture_wmabt")
 
-[node name="BotonSalir" type="Button" parent="VBoxContainer" unique_id=1250621849]
+[node name="BotonOpciones" type="TextureButton" parent="VBoxContainer" unique_id=1814067215]
 layout_mode = 2
-text = "Salir"
+focus_mode = 0
+texture_normal = SubResource("AtlasTexture_68rhi")
+texture_pressed = SubResource("AtlasTexture_siaa2")
+
+[node name="BotonSalir" type="TextureButton" parent="VBoxContainer" unique_id=953041127]
+layout_mode = 2
+focus_mode = 0
+texture_normal = SubResource("AtlasTexture_vpimu")
+texture_pressed = SubResource("AtlasTexture_dchyr")
 
 [connection signal="pressed" from="VBoxContainer/BotonContinuar" to="." method="_on_boton_continuar_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotonOpciones" to="." method="_on_boton_opciones_pressed"]
 [connection signal="pressed" from="VBoxContainer/BotonSalir" to="." method="_on_boton_salir_pressed"]

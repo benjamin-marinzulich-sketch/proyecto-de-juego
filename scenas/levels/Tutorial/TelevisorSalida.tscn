@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ha6g4sb5n7c4"]
+
+[ext_resource type="Script" uid="uid://80wngjur6dop" path="res://scenas/levels/Tutorial/televisor_salida.gd" id="1_naxkr"]
+[ext_resource type="Texture2D" uid="uid://cl5dmbhs1tkis" path="res://scripts/global/tele (3).png" id="2_0p8su"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y22pi"]
+size = Vector2(53.5, 29.5)
+
+[node name="TelevisorSalida" type="StaticBody2D" unique_id=1065886654]
+script = ExtResource("1_naxkr")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1114228292]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1730232111]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1991937254]
+position = Vector2(96, 172)
+texture = ExtResource("2_0p8su")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=358607354]
+position = Vector2(75.25, 205.25)
+shape = SubResource("RectangleShape2D_y22pi")
