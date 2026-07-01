@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://be70egmp4q1qv"]
-
-[ext_resource type="Texture2D" uid="uid://c7x8uuansltmj" path="res://scripts/global/heart_16x16.png" id="1_8f7u0"]
-
-[node name="HeartIcon" type="TextureRect" unique_id=1259109225]
-custom_minimum_size = Vector2(16, 16)
-texture = ExtResource("1_8f7u0")
-stretch_mode = 5

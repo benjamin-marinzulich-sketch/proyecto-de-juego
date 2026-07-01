@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://c7uugvfxsprv2"]
 
 [ext_resource type="Script" uid="uid://dftjy08ihwu74" path="res://scenas/ui/selector/selector_niveles.gd" id="1_t8256"]
-[ext_resource type="Texture2D" uid="uid://cqiegbevspj42" path="res://scenas/ui/assets/qweerr.png" id="2_i8svr"]
-[ext_resource type="Texture2D" uid="uid://divb7nla6ebxb" path="res://scripts/global/freebuttons2.png" id="3_v8k3p"]
-[ext_resource type="Texture2D" uid="uid://l5exr8772pr4" path="res://scripts/global/freebuttons3.png" id="4_kxrw8"]
+[ext_resource type="Texture2D" uid="uid://btfvyrhg7wfos" path="res://scenas/ui/assets/Bordes/MarcoTv.png" id="2_t8256"]
+[ext_resource type="Texture2D" uid="uid://divb7nla6ebxb" path="res://scenas/ui/assets/Botones/freebuttons2.png" id="3_v8k3p"]
+[ext_resource type="Texture2D" uid="uid://l5exr8772pr4" path="res://scenas/ui/assets/Botones/freebuttons3.png" id="4_kxrw8"]
+[ext_resource type="PackedScene" uid="uid://drnch3c40674" path="res://scenas/ui/sonido_ui/MusicaFondo.tscn" id="5_i8svr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ou46n"]
 atlas = ExtResource("3_v8k3p")
@@ -39,19 +40,25 @@ grow_vertical = 2
 script = ExtResource("1_t8256")
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=819153901]
+[node name="PantallaPreview" type="TextureRect" parent="." unique_id=819153901]
 layout_mode = 0
-offset_right = 481.0
-offset_bottom = 271.0
+offset_left = 121.0
+offset_top = 23.0
+offset_right = 358.0
+offset_bottom = 245.0
 expand_mode = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="TvFrame" type="NinePatchRect" parent="." unique_id=378096081]
-layout_mode = 0
-offset_left = -12.0
-offset_top = -7.0
-offset_right = 493.0
-offset_bottom = 279.0
-texture = ExtResource("2_i8svr")
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_t8256")
+metadata/_edit_use_anchors_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=176229959]
 layout_mode = 1
@@ -78,7 +85,13 @@ layout_mode = 2
 texture_normal = SubResource("AtlasTexture_ilg86")
 texture_pressed = SubResource("AtlasTexture_h0flb")
 
-[node name="Btnsiguiente" type="TextureButton" parent="HBoxContainer" unique_id=1109975108]
+[node name="BtnSiguiente" type="TextureButton" parent="HBoxContainer" unique_id=1109975108]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_h30jn")
 texture_pressed = SubResource("AtlasTexture_5hnt3")
+
+[node name="MusicaFondo" parent="." unique_id=1631150167 instance=ExtResource("5_i8svr")]
+
+[connection signal="pressed" from="HBoxContainer/BtnAnterior" to="." method="_on_btn_anterior_pressed"]
+[connection signal="pressed" from="HBoxContainer/BtnIniciar" to="." method="_on_btn_iniciar_pressed"]
+[connection signal="pressed" from="HBoxContainer/BtnSiguiente" to="." method="_on_btn_siguiente_pressed"]

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://drnch3c40674"]
+
+[ext_resource type="AudioStream" uid="uid://b0w68hlf106qe" path="res://scenas/ui/sonido_ui/Pixel Haven.mp3" id="1_g4ck7"]
+
+[node name="MusicaFondo" type="AudioStreamPlayer" unique_id=1631150167]
+stream = ExtResource("1_g4ck7")
+volume_db = -10.209
+autoplay = true
