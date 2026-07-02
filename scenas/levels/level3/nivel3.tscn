@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://chqi3hjplmyt0" path="res://scenas/ui/assets/Bordes/MarcoTvJugable.png" id="4_hbwnx"]
 [ext_resource type="AudioStream" uid="uid://cb11ike126xxf" path="res://assets/audio/musicafondo/Tiptoe_Snap_Gulp.mp3" id="6_1hhin"]
 [ext_resource type="PackedScene" uid="uid://c6lafk2b4g58y" path="res://scenas/levels/basenivel/presentacion/PresentacionNivel.tscn" id="6_lkw5t"]
+[ext_resource type="PackedScene" uid="uid://c2cyum6cfduut" path="res://scenas/TOM/character_body_2d.tscn" id="7_oxeo4"]
+[ext_resource type="PackedScene" uid="uid://o2i53gjwa6ca" path="res://scenas/bosses/luxo.jr/luxo jr.tscn" id="8_oxeo4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wo6rx"]
 resource_name = "tertert"
@@ -356,3 +358,9 @@ visible = false
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=526260704]
 stream = ExtResource("6_1hhin")
 volume_db = -10.0
+
+[node name="CharacterBody2D" parent="." unique_id=292408633 instance=ExtResource("7_oxeo4")]
+position = Vector2(439, 233)
+
+[node name="LuxoJr" parent="." unique_id=545867369 instance=ExtResource("8_oxeo4")]
+position = Vector2(64, 196)
