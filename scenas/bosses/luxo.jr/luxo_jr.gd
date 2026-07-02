@@ -262,4 +262,4 @@ func _morir():
 	_animated_sprite.play("death")
 	print("¡El enemigo ha muerto! Cerrando el juego...")
 	await _animated_sprite.animation_finished
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://scenas/ui/menu principal/Menuprincipal.tscn")
