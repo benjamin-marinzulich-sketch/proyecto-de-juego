@@ -98,7 +98,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-# --- SOBRESCRIBIMOS LA MUERTE PARA AGREGAR EL CRONÓMETRO ---
+
 # --- SOBRESCRIBIMOS LA MUERTE PARA AGREGAR EL CRONÓMETRO ---
 func _die() -> void:
 	# 1. 👇 SEGURO ANTICRASH: Si ya está muerta, ignoramos los golpes extra
