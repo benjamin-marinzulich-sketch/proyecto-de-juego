@@ -349,3 +349,4 @@ offset_bottom = 270.0
 texture = ExtResource("4_fs7e5")
 
 [node name="PresentacionNivel" parent="." unique_id=1660969615 instance=ExtResource("6_vmkai")]
+visible = false
