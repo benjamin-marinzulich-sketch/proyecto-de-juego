@@ -10,6 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://15nw1bd8xpkd" path="res://TILSETS/TUTORIAL SETS/2 Background/Night/5.png" id="8_wqiiw"]
 [ext_resource type="PackedScene" uid="uid://ha6g4sb5n7c4" path="res://scenas/levels/Tutorial/TelevisorSalida.tscn" id="9_0norh"]
 [ext_resource type="PackedScene" uid="uid://c2cyum6cfduut" path="res://scenas/TOM/character_body_2d.tscn" id="10_2i3dd"]
+[ext_resource type="Texture2D" uid="uid://2g382qhovq2q" path="res://assets/letras/keyboard_32.png" id="11_illdb"]
+[ext_resource type="Texture2D" uid="uid://b170jj2r2ycax" path="res://assets/letras/keyboard_33.png" id="12_bu16a"]
+[ext_resource type="Texture2D" uid="uid://bam0kdpkk1213" path="res://assets/letras/keyboard_174.png" id="13_jw0w3"]
+[ext_resource type="Texture2D" uid="uid://cehmbb8eb3e0v" path="res://assets/letras/keyboard_173.png" id="14_ia67h"]
+[ext_resource type="PackedScene" uid="uid://drnch3c40674" path="res://scenas/ui/sonido_ui/MusicaFondo.tscn" id="16_153yh"]
+[ext_resource type="AudioStream" uid="uid://6j77whylacqy" path="res://assets/audio/tutorialmusic/03-Loop 2-JSCR.ogg" id="17_illdb"]
+[ext_resource type="Texture2D" uid="uid://6hc0nm2l22ot" path="res://assets/letras/keyboard_212.png" id="18_tfxjh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2jusp"]
 resource_name = "tertert"
@@ -383,3 +390,35 @@ position = Vector2(360, 36)
 
 [node name="CharacterBody2D" parent="." unique_id=292408633 instance=ExtResource("10_2i3dd")]
 position = Vector2(18, 229)
+
+[node name="CartelAtaque" type="Node2D" parent="." unique_id=800675597]
+
+[node name="z" type="Sprite2D" parent="CartelAtaque" unique_id=630203261]
+position = Vector2(312, 188)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_illdb")
+
+[node name="CartelMovimiento" type="Node2D" parent="." unique_id=1791328374]
+
+[node name="s" type="Sprite2D" parent="CartelMovimiento" unique_id=909382745]
+position = Vector2(61, 141)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_bu16a")
+
+[node name="a" type="Sprite2D" parent="CartelMovimiento" unique_id=2122491524]
+position = Vector2(44, 141)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_jw0w3")
+
+[node name="d" type="Sprite2D" parent="CartelMovimiento" unique_id=1795566642]
+position = Vector2(78, 141)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_ia67h")
+
+[node name="space" type="Sprite2D" parent="CartelMovimiento" unique_id=1296434656]
+position = Vector2(116, 141)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("18_tfxjh")
+
+[node name="MusicaFondo" parent="." unique_id=1631150167 instance=ExtResource("16_153yh")]
+stream = ExtResource("17_illdb")
