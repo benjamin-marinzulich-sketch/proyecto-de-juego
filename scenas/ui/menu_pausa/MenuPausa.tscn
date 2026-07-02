@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://bqpbdif437ww1"]
 
-[ext_resource type="Script" uid="uid://bljuoidnl4xft" path="res://scenas/ui/menu_pausa/menu_pausa.gd" id="1_fdlhb"]
+[ext_resource type="Script" uid="uid://b2j3wlobfnrfy" path="res://scenas/ui/menu_pausa/menupausa.gd" id="1_dchyr"]
 [ext_resource type="Texture2D" uid="uid://dqyxtiou4ue0s" path="res://scenas/ui/assets/Botones/freebuttons4 (1).png" id="2_wmabt"]
 [ext_resource type="Texture2D" uid="uid://l5exr8772pr4" path="res://scenas/ui/assets/Botones/freebuttons3.png" id="3_dchyr"]
+[ext_resource type="Texture2D" uid="uid://cwn7bfgwj3l0h" path="res://scenas/ui/assets/Botones/freebuttons5.png" id="3_wmabt"]
+[ext_resource type="Texture2D" uid="uid://j7k4vjmtrwih" path="res://scenas/ui/assets/Botones/freebuttons6.png" id="5_um7x5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_um7x5"]
 atlas = ExtResource("2_wmabt")
@@ -28,9 +30,25 @@ region = Rect2(64, 0, 64, 32)
 atlas = ExtResource("3_dchyr")
 region = Rect2(64, 32, 64, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rfeb"]
+atlas = ExtResource("3_wmabt")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1u5b"]
+atlas = ExtResource("3_wmabt")
+region = Rect2(64, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nb78"]
+atlas = ExtResource("5_um7x5")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0ial"]
+atlas = ExtResource("5_um7x5")
+region = Rect2(0, 32, 64, 32)
+
 [node name="MenuPausa" type="CanvasLayer" unique_id=2003240280]
 process_mode = 3
-script = ExtResource("1_fdlhb")
+script = ExtResource("1_dchyr")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=771600893]
 anchors_preset = 15
@@ -57,24 +75,57 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 alignment = 1
 
-[node name="BotonContinuar" type="TextureButton" parent="VBoxContainer" unique_id=2093904933]
+[node name="BtnContinuar" type="TextureButton" parent="VBoxContainer" unique_id=2093904933]
 layout_mode = 2
 focus_mode = 0
 texture_normal = SubResource("AtlasTexture_um7x5")
 texture_pressed = SubResource("AtlasTexture_wmabt")
 
-[node name="BotonOpciones" type="TextureButton" parent="VBoxContainer" unique_id=1814067215]
+[node name="BtnOpciones" type="TextureButton" parent="VBoxContainer" unique_id=1814067215]
 layout_mode = 2
 focus_mode = 0
 texture_normal = SubResource("AtlasTexture_68rhi")
 texture_pressed = SubResource("AtlasTexture_siaa2")
 
-[node name="BotonSalir" type="TextureButton" parent="VBoxContainer" unique_id=953041127]
+[node name="BtnSalir" type="TextureButton" parent="VBoxContainer" unique_id=953041127]
 layout_mode = 2
 focus_mode = 0
 texture_normal = SubResource("AtlasTexture_vpimu")
 texture_pressed = SubResource("AtlasTexture_dchyr")
 
-[connection signal="pressed" from="VBoxContainer/BotonContinuar" to="." method="_on_boton_continuar_pressed"]
-[connection signal="pressed" from="VBoxContainer/BotonOpciones" to="." method="_on_boton_opciones_pressed"]
-[connection signal="pressed" from="VBoxContainer/BotonSalir" to="." method="_on_boton_salir_pressed"]
+[node name="BtnHome" type="TextureButton" parent="VBoxContainer" unique_id=1754846783]
+layout_mode = 2
+focus_mode = 0
+texture_normal = SubResource("AtlasTexture_6rfeb")
+texture_pressed = SubResource("AtlasTexture_h1u5b")
+
+[node name="ContenedorOpciones" type="VBoxContainer" parent="." unique_id=1568501807]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -39.5
+offset_right = 32.0
+offset_bottom = 39.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ContenedorOpciones" unique_id=1009281989]
+layout_mode = 2
+text = "Volumen"
+
+[node name="SliderVolumen" type="HSlider" parent="ContenedorOpciones" unique_id=1356775461]
+layout_mode = 2
+
+[node name="Btnvolver" type="TextureButton" parent="ContenedorOpciones" unique_id=284773064]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_8nb78")
+texture_pressed = SubResource("AtlasTexture_w0ial")
+
+[connection signal="pressed" from="VBoxContainer/BtnContinuar" to="." method="_on_btn_continuar_pressed"]
+[connection signal="pressed" from="VBoxContainer/BtnOpciones" to="." method="_on_btn_opciones_pressed"]
+[connection signal="pressed" from="VBoxContainer/BtnSalir" to="." method="_on_btn_salir_pressed"]
+[connection signal="pressed" from="VBoxContainer/BtnHome" to="." method="_on_btnhome_pressed"]
+[connection signal="pressed" from="ContenedorOpciones/Btnvolver" to="." method="_on_btnvolver_pressed"]

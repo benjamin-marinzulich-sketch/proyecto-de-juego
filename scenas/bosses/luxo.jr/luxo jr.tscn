@@ -125,6 +125,7 @@ size = Vector2(104, 128)
 size = Vector2(104, 136)
 
 [node name="LuxoJr" type="CharacterBody2D" unique_id=545867369]
+process_mode = 1
 collision_layer = 4
 script = ExtResource("1_c18oc")
 

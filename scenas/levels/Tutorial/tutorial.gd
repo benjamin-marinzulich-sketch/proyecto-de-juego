@@ -1,23 +1,26 @@
 extends Node2D
 
-# Vinculamos el texto del conteo (está perfecto en tu CanvasLayer)
+# --- VARIABLES DEL CONTEO ---
 @onready var label_conteo = $CanvasLayer/LabelConteo
-
 var tiempo_restante = 3
 
+# --- VARIABLES DE LOS CARTELES (TUTORIAL) ---
+@onready var cartel_movimiento = $CartelMovimiento
+@onready var cartel_ataque = $CartelAtaque
+
 func _ready() -> void:
+	# 0. Ocultamos el cartel de ataque desde el principio
+	if cartel_ataque:
+		cartel_ataque.modulate.a = 0.0
+
 	# 1. Voltear los personajes para que se miren de frente al iniciar
-	# Suponiendo que LuxoJr (Tom) empieza a la derecha y debe mirar a la izquierda:
 	if has_node("LuxoJr"):
-		# Buscamos su AnimatedSprite2D. Cambia "AnimatedSprite2D" por su nombre exacto si es otro.
 		get_node("LuxoJr/AnimatedSprite2D").flip_h = true 
 		
-	# Suponiendo que el Boss (CharacterBody2D) empieza a la izquierda y debe mirar a la derecha:
 	if has_node("CharacterBody2D"):
-		# Falso significa que se queda con su orientación original (mirando a la derecha)
 		get_node("CharacterBody2D/AnimatedSprite2D").flip_h = true 
 
-	# 2. Congelamos a tus personajes para el conteo (Esto ya lo tenían)
+	# 2. Congelamos a tus personajes para el conteo
 	if has_node("LuxoJr"):
 		get_node("LuxoJr").set_physics_process(false)
 	if has_node("CharacterBody2D"): 
@@ -39,11 +42,43 @@ func _iniciar_cuenta_regresiva() -> void:
 	label_conteo.text = "¡READY!"
 	await get_tree().create_timer(0.8).timeout
 	
-	# Escondemos el texto
+	# Escondemos el texto del conteo
 	label_conteo.visible = false
 	
-	# 4. ¡A PELEAR! Devolvemos las físicas a tus personajes reales
+	# 4. ¡A PELEAR! Devolvemos las físicas a tus personajes
 	if has_node("LuxoJr"):
 		get_node("LuxoJr").set_physics_process(true)
 	if has_node("CharacterBody2D"):
 		get_node("CharacterBody2D").set_physics_process(true)
+		
+	# 5. Iniciamos la secuencia de los carteles ahora que ya pueden moverse
+	_secuencia_carteles()
+
+# --- NUEVA FUNCIÓN: SECUENCIA DEL TUTORIAL ---
+func _secuencia_carteles() -> void:
+	# Por seguridad, verificamos que los carteles existan en la escena
+	if not cartel_movimiento or not cartel_ataque:
+		return
+		
+	# 1. Dejamos que el jugador lea el de movimiento por 5 segundos
+	await get_tree().create_timer(3.0).timeout
+	
+	# 2. Desaparecemos el cartel de movimiento suavemente
+	var tween_mov = create_tween()
+	tween_mov.tween_property(cartel_movimiento, "modulate:a", 0.0, 1.0)
+	await tween_mov.finished
+	cartel_movimiento.queue_free() 
+	
+	# 3. Hacemos aparecer el cartel de ataque
+	var tween_ataque_in = create_tween()
+	tween_ataque_in.tween_property(cartel_ataque, "modulate:a", 1.0, 1.0)
+	await tween_ataque_in.finished
+	
+	# 4. Lo dejamos visible en pantalla por otros 5 segundos
+	await get_tree().create_timer(3.0).timeout
+	
+	# 5. Finalmente, desaparecemos el cartel de ataque
+	var tween_ataque_out = create_tween()
+	tween_ataque_out.tween_property(cartel_ataque, "modulate:a", 0.0, 1.0)
+	await tween_ataque_out.finished
+	cartel_ataque.queue_free()
