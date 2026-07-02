@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://chqi3hjplmyt0" path="res://scenas/ui/assets/Bordes/MarcoTvJugable.png" id="4_tkejy"]
 [ext_resource type="AudioStream" uid="uid://cw241cl50cf0q" path="res://assets/audio/musicafondo/fashion---britney-manson-(perfect-slow)-made-with-Voicemod.mp3" id="6_in0m0"]
 [ext_resource type="PackedScene" uid="uid://c6lafk2b4g58y" path="res://scenas/levels/basenivel/presentacion/PresentacionNivel.tscn" id="6_n1qni"]
+[ext_resource type="PackedScene" uid="uid://c05n5tqrfsvc5" path="res://scenas/bosses/MODA/edna.tscn" id="7_i3opb"]
+[ext_resource type="PackedScene" uid="uid://c2cyum6cfduut" path="res://scenas/TOM/character_body_2d.tscn" id="8_235vp"]
+[ext_resource type="PackedScene" uid="uid://ctbhlq0nnadwv" path="res://scenas/ui/corazones/UIVida.tscn" id="9_235vp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wo6rx"]
 resource_name = "tertert"
@@ -352,8 +355,17 @@ texture = ExtResource("4_tkejy")
 metadata/_edit_use_anchors_ = true
 
 [node name="PresentacionNivel" parent="." unique_id=1660969615 instance=ExtResource("6_n1qni")]
+process_mode = 3
 visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1355749880]
 stream = ExtResource("6_in0m0")
 volume_db = -32.232
+
+[node name="Edna" parent="." unique_id=1731641126 instance=ExtResource("7_i3opb")]
+position = Vector2(26, 236)
+
+[node name="CharacterBody2D" parent="." unique_id=292408633 instance=ExtResource("8_235vp")]
+position = Vector2(446, 229)
+
+[node name="UiVida" parent="." unique_id=610687037 instance=ExtResource("9_235vp")]

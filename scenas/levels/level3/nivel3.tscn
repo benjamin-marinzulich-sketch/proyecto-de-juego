@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c6lafk2b4g58y" path="res://scenas/levels/basenivel/presentacion/PresentacionNivel.tscn" id="6_lkw5t"]
 [ext_resource type="PackedScene" uid="uid://c2cyum6cfduut" path="res://scenas/TOM/character_body_2d.tscn" id="7_oxeo4"]
 [ext_resource type="PackedScene" uid="uid://o2i53gjwa6ca" path="res://scenas/bosses/luxo.jr/luxo jr.tscn" id="8_oxeo4"]
+[ext_resource type="PackedScene" uid="uid://ctbhlq0nnadwv" path="res://scenas/ui/corazones/UIVida.tscn" id="9_nlnrf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wo6rx"]
 resource_name = "tertert"
@@ -353,6 +354,7 @@ offset_bottom = 270.0
 texture = ExtResource("4_hbwnx")
 
 [node name="PresentacionNivel" parent="." unique_id=1660969615 instance=ExtResource("6_lkw5t")]
+process_mode = 3
 visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=526260704]
@@ -364,3 +366,5 @@ position = Vector2(439, 233)
 
 [node name="LuxoJr" parent="." unique_id=545867369 instance=ExtResource("8_oxeo4")]
 position = Vector2(64, 196)
+
+[node name="UiVida" parent="." unique_id=610687037 instance=ExtResource("9_nlnrf")]

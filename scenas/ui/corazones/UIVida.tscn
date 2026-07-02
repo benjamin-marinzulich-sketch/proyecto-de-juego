@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://ctbhlq0nnadwv"]
+
+[ext_resource type="Script" uid="uid://dq6wu6ouwsxfu" path="res://scenas/ui/corazones/ui_vida.gd" id="1_srmxh"]
+[ext_resource type="Texture2D" uid="uid://dd8ljidf1oeu1" path="res://scenas/ui/assets/heart_32x32.png" id="2_35l1y"]
+
+[node name="UiVida" type="CanvasLayer" unique_id=610687037]
+script = ExtResource("1_srmxh")
+
+[node name="Anclaje" type="Control" parent="." unique_id=581794964]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Corazones" type="HBoxContainer" parent="Anclaje" unique_id=1748191158]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+pivot_offset = Vector2(16, 16)
+theme_override_constants/separation = 4
+
+[node name="Corazon1" type="TextureRect" parent="Anclaje/Corazones" unique_id=2056683550]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("2_35l1y")
+
+[node name="Corazon2" type="TextureRect" parent="Anclaje/Corazones" unique_id=1151016320]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("2_35l1y")
+
+[node name="Corazon3" type="TextureRect" parent="Anclaje/Corazones" unique_id=1174426145]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("2_35l1y")
