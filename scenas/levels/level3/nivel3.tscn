@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cjrw31q8mn2hu" path="res://scenas/levels/level3/nivel_3.gd" id="1_lkw5t"]
 [ext_resource type="Texture2D" uid="uid://ce3sq1uep2qfd" path="res://TILSETS/TUTORIAL SETS/2 Background/Night/untitled.png" id="1_s6mm6"]
 [ext_resource type="Texture2D" uid="uid://chqi3hjplmyt0" path="res://scenas/ui/assets/Bordes/MarcoTvJugable.png" id="4_hbwnx"]
+[ext_resource type="AudioStream" uid="uid://cb11ike126xxf" path="res://assets/audio/musicafondo/Tiptoe_Snap_Gulp.mp3" id="6_1hhin"]
 [ext_resource type="PackedScene" uid="uid://c6lafk2b4g58y" path="res://scenas/levels/basenivel/presentacion/PresentacionNivel.tscn" id="6_lkw5t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wo6rx"]
@@ -350,3 +351,8 @@ offset_bottom = 270.0
 texture = ExtResource("4_hbwnx")
 
 [node name="PresentacionNivel" parent="." unique_id=1660969615 instance=ExtResource("6_lkw5t")]
+visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=526260704]
+stream = ExtResource("6_1hhin")
+volume_db = -10.0

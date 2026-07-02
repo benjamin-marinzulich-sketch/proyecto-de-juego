@@ -25,8 +25,6 @@ func actualizar_interfaz():
 		1:
 			pantalla_preview.texture = img_nivel_1
 		2:
-			pantalla_preview.texture = img_nivel_2
-		3:
 			pantalla_preview.texture = img_nivel_3
 func _on_btn_iniciar_pressed():
 	var ruta_nivel = ""
@@ -37,8 +35,6 @@ func _on_btn_iniciar_pressed():
 			# Ojo aquí: Ajusta el nombre del archivo si le pusiste diferente a Nivel1.tscn
 			ruta_nivel = "res://scenas/levels/level1/nivel1.tscn" 
 		2:
-			ruta_nivel = "res://scenas/levels/level2/nivel2.tscn"
-		3:
 			ruta_nivel = "res://scenas/levels/level3/nivel3.tscn"
 		_:
 			print("Error: Nivel no configurado")

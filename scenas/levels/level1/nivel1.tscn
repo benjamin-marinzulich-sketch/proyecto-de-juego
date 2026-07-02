@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dhhsv827i0mw0" path="res://scenas/levels/level1/nivel_1.gd" id="1_n1qni"]
 [ext_resource type="Texture2D" uid="uid://ce3sq1uep2qfd" path="res://TILSETS/TUTORIAL SETS/2 Background/Night/untitled.png" id="1_s3s83"]
 [ext_resource type="Texture2D" uid="uid://chqi3hjplmyt0" path="res://scenas/ui/assets/Bordes/MarcoTvJugable.png" id="4_tkejy"]
+[ext_resource type="AudioStream" uid="uid://cw241cl50cf0q" path="res://assets/audio/musicafondo/fashion---britney-manson-(perfect-slow)-made-with-Voicemod.mp3" id="6_in0m0"]
 [ext_resource type="PackedScene" uid="uid://c6lafk2b4g58y" path="res://scenas/levels/basenivel/presentacion/PresentacionNivel.tscn" id="6_n1qni"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wo6rx"]
@@ -351,3 +352,8 @@ texture = ExtResource("4_tkejy")
 metadata/_edit_use_anchors_ = true
 
 [node name="PresentacionNivel" parent="." unique_id=1660969615 instance=ExtResource("6_n1qni")]
+visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1355749880]
+stream = ExtResource("6_in0m0")
+volume_db = -32.232
